@@ -1,0 +1,127 @@
+Exherbo Artwork
+===============
+
+This package contains Exherbo-themed images in SVG format which, when processed
+with the included utility `make-exherbo-art`, are suitable for use as desktop
+wallpaper, display manager backgrounds, boot splashes, or GRUB menu splashes.
+The original SVG zebrapig logo is also provided for users who wish to create
+their own Exherbo-themed artwork.
+
+Each image (with the exception of the artwork in the `logo/` subdirectory) has
+been specially prepared for SVGmod processing. See `README.mkd` in the SVGmod
+distribution for more information on this process.
+
+
+Contents
+--------
+
+* **/usr/share/exherbo-artwork/exherbo-zebrapig.svg**
+
+  The Passively Capricious Zebrapig. Font: *Distro Bold*.
+
+* **/usr/share/exherbo-artwork/exherbo-zebrapig-grub_legacy.svg**
+
+  Same as above but recomposed to look nice with GRUB Legacy's fixed 640x480
+  menu layout. Font: *Distro Bold*.
+
+* **/usr/share/exherbo-artwork/exherbo-zebrapig-zoink.svg**
+
+  Zoinking ZebraPig. "exherbo" font: *Distro Bold*. Zoink font: *Complete in
+  Him*.
+
+* **/usr/share/exherbo-artwork/logo/*.svg**
+
+  Original SVG zebrapig logo.
+
+* **/usr/bin/make-exherbo-art**
+
+  Tool to automate the customization of SVG images to multiple display
+  geometries and background colors, sparing Exherbo developers from tedium and
+  giving users a simple, straightforward way to tailor images to their needs
+  without having to use tools such as Inkscape or GIMP.
+
+* **/etc/exherbo-artwork.cfg**
+
+  Configuration file for `make-exherbo-art`.
+
+
+Requirements
+------------
+
+Needed by `make-exherbo-art`:
+
+* **ImageMagick**
+* **Python** - Version 2.6 or greater.
+* **SVGmod**
+
+
+Usage
+-----
+
+For a complete list of command line options see `make-exherbo-art --help`.
+
+Before using `make-exherbo-art` for the first time you should edit
+`/etc/exherbo-artwork.cfg` and at least set the output resolutions to suit
+your needs. Read the comments in that file for configuration details. You can
+comment out sections for any images you won't use, or add new sections for
+images not included in this distribution.
+
+Once you have a customized configuration simply run:
+
+    make-exherbo-art
+
+Processed files will be saved to the current directory by default, although
+this can be overridden in the config file either globally or per-file. The
+output directory settings in the config file can also be overridden with the
+`--output-dir` command line option.
+
+Some common cases for deploying output images are outlined below:
+
+
+### GRUB Legacy splash images
+
+    mv exherbo-zebrapig-grub_legacy-pink.xpm.gz /boot/grub/
+
+Edit the value for `splashimage` in your `grub.conf` file or `menu.lst` if
+that's what you use. (Simply add the following line to the beginning of the
+file if no `splashimage` setting exists.)
+
+    splashimage=(hd0,0)/grub/exherbo-zebrapig-grub_legacy-pink.xpm.gz
+
+Replace `(hd0,0)` with your system's GRUB root if it's different.
+
+
+### KDE wallpaper
+
+For KDE4:
+
+    mv exherbo-zebrapig-zoink-pink-1024x768.png ~/.kde4/share/wallpapers/
+
+
+Authors
+-------
+
+Ida Jensen <ajp@exherbo.org>  
+Sterling X. Winter <sterling.winter@gmail.com>
+
+
+Copyright and License
+---------------------
+
+### make-exherbo-art
+> Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
+>
+> Released under the MIT License. See the file LICENSE for redistribution
+> information.
+
+### Artwork under subdirectory "logo"
+> Copyright (c) 2008 Ida Jensen <ajp@exherbo.org>
+>
+> See the file logo/COPYING for license information.
+
+### All other artwork
+> Copyright (c) 2008 Ida Jensen <ajp@exherbo.org>  
+> Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
+>
+> Released under the [Creative Commons Attribution-Noncommercial 3.0
+> license](http://creativecommons.org/licenses/by-nc/3.0/).
