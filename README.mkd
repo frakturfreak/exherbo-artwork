@@ -80,13 +80,13 @@ Some common cases for deploying output images are outlined below:
 
 ### GRUB Legacy splash images
 
-    mv exherbo-zebrapig-grub_legacy-pink.xpm.gz /boot/grub/
+    mv exherbo-zebrapig-grub_legacy-pink-640x480.xpm.gz /boot/grub/
 
 Edit the value for `splashimage` in your `grub.conf` file or `menu.lst` if
 that's what you use. (Simply add the following line to the beginning of the
 file if no `splashimage` setting exists.)
 
-    splashimage=(hd0,0)/grub/exherbo-zebrapig-grub_legacy-pink.xpm.gz
+    splashimage=(hd0,0)/grub/exherbo-zebrapig-grub_legacy-pink-640x480.xpm.gz
 
 Replace `(hd0,0)` with your system's GRUB root if it's different.
 
@@ -101,7 +101,8 @@ For KDE4:
 Authors
 -------
 
-Ida Jensen <ajp@exherbo.org>  
+Christel Dahlskjaer <christel@exherbo.org>
+Ida Jensen
 Sterling X. Winter <sterling.winter@gmail.com>
 
 
@@ -115,12 +116,16 @@ Copyright and License
 > information.
 
 ### Artwork under subdirectory "logo"
-> Copyright (c) 2008 Ida Jensen <ajp@exherbo.org>
+> Copyright (c) 2008 Ida Jensen
+>
+> Based on an original drawing Copyright (c) 2008 Christel Dahlskjaer
+> <christel@exherbo.org>
 >
 > See the file logo/COPYING for license information.
 
 ### All other artwork
-> Copyright (c) 2008 Ida Jensen <ajp@exherbo.org>  
+> Copyright (c) 2008 Christel Dahlskjaer <christel@exherbo.org>  
+> Copyright (c) 2008 Ida Jensen  
 > Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
 >
 > Released under the [Creative Commons Attribution-Noncommercial 3.0

@@ -4,7 +4,7 @@
 # See the file LICENSE for redistribution information.
 
 from commands import getstatusoutput
-from ConfigParser import NoSectionError, NoOptionError, SafeConfigParser
+from ConfigParser import NoOptionError, NoSectionError, SafeConfigParser
 from optparse import OptionParser
 from tempfile import mkstemp
 
@@ -165,7 +165,28 @@ def parseResolutions(resolutions, inputFile):
                 "%s" % (inputFile, resolution))
     return resolutionsSplit
 
-def processConfig(config, configParser):
+def processConfig(configParser):
+    # 'config' structure when populated:
+    #
+    # { "colorAliases"     : { alias : rgb }
+    #   "defaultInputDir"  : dir
+    #   "defaultOutputDir" : dir
+    #   "inputFiles"       : [ ( filename, { "background_colors" : [ background_color ]
+    #                                        "formats"           : [ format ]
+    #                                        "input_dir"         : dir
+    #                                        "output_dir"        : dir
+    #                                        "resolutions"       : [ resolution ]
+    #                                      }
+    #                          )
+    #                        ]
+    # }
+    config = {
+        "colorAliases"     : {},
+        "defaultInputDir"  : "",
+        "defaultOutputDir" : "",
+        "inputFiles"       : []
+    }
+
     # config["colorAliases"]
     try:
         colorAliases = configParser.items("Color Aliases")
@@ -281,6 +302,7 @@ def processConfig(config, configParser):
         inputFiles += [(inputFile, inputFileOptions)]
 
     config["inputFiles"] = inputFiles
+    return config
 
 def processImages(options, config):
     if not options.quiet:
@@ -361,27 +383,6 @@ def runShellCommand(command):
         raise OSError(status, output)
 
 if __name__ == "__main__":
-    # 'config' structure when populated by processConfig():
-    #
-    # { "colorAliases"     : { alias : rgb }
-    #   "defaultInputDir"  : dir
-    #   "defaultOutputDir" : dir
-    #   "inputFiles"       : [ ( filename, { "background_colors" : [ background_color ]
-    #                                        "formats"           : [ format ]
-    #                                        "input_dir"         : dir
-    #                                        "output_dir"        : dir
-    #                                        "resolutions"       : [ resolution ]
-    #                                      }
-    #                          )
-    #                        ]
-    # }
-    config = {
-        "colorAliases"     : {},
-        "defaultInputDir"  : "",
-        "defaultOutputDir" : "",
-        "inputFiles"       : []
-    }
-
     options = parseArgs()
     configParser = SafeConfigParser()
 
@@ -397,7 +398,7 @@ if __name__ == "__main__":
             exitWithErrorMessage("Missing or invalid default config file: " + DEFAULT_CONFIG_FILE)
 
     try:
-        processConfig(config, configParser)
+        config = processConfig(configParser)
         if not config["inputFiles"]:
             exitWithErrorMessage("No input files specified in config file.")
         processImages(options, config)
