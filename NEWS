@@ -6,6 +6,13 @@ A complete changelog detailing all commits can be found here:
 
     http://github.com/replica/exherbo-artwork/commits/master/
 
+Version 0.2 - released 2009-03-01
+
+    * Recompose SVGs to narrower 1.25:1 aspect to permit SVGmod scaling to
+      1280x1024
+    * Add TODO
+    * Add Christel Dahlskjaer credits and copyright
+
 Version 0.1 - released 2009-03-01
 
     * First public release
