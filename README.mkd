@@ -101,8 +101,8 @@ For KDE4:
 Authors
 -------
 
-Christel Dahlskjaer <christel@exherbo.org>
-Ida Jensen
+Christel Dahlskjaer <christel@exherbo.org>  
+Ida Jensen  
 Sterling X. Winter <sterling.winter@gmail.com>
 
 
