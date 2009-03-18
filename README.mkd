@@ -131,5 +131,5 @@ Copyright and License
 > Copyright (c) 2008 Ida Jensen  
 > Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
 >
-> Released under the [Creative Commons Attribution-Noncommercial 3.0
-> license](http://creativecommons.org/licenses/by-nc/3.0/).
+> Released under the [Creative Commons Attribution-ShareAlike 3.0
+> license](http://creativecommons.org/licenses/by-sa/3.0/).
