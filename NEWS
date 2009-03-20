@@ -6,6 +6,11 @@ A complete changelog detailing all commits can be found here:
 
     http://github.com/replica/exherbo-artwork/commits/master/
 
+Version 0.3 - released 2009-03-20
+
+    * Relicense artwork under Creative Commons Attribution-ShareAlike 3.0,
+      since upstream changed Zebrapig logo license to the same
+
 Version 0.2 - released 2009-03-01
 
     * Recompose SVGs to narrower 1.25:1 aspect to permit SVGmod scaling to
