@@ -11,8 +11,8 @@ Each image (with the exception of the artwork in the `logo/` subdirectory) has
 been specially prepared for SVGmod processing, which allows automated changing
 of background color and widening of the image without its contents being
 flattened. See `README.mkd` in the
-[SVGmod distribution](http://github.com/replica/svgmod/tree/master/) for more
-information on this process, and `man svgmod` for usage details.
+[SVGmod distribution](http://gitorious.org/svgmod/) for more information on
+this process, and `man svgmod` for usage details.
 
 
 Contents
