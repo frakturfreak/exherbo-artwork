@@ -4,46 +4,50 @@ Exherbo Artwork
 This package contains Exherbo-themed images in SVG format which, when processed
 with the included utility `make-exherbo-art`, are suitable for use as desktop
 wallpaper, display manager backgrounds, boot splashes, or GRUB menu splashes.
-The original SVG zebrapig logo is also provided for users who wish to create
-their own Exherbo-themed artwork.
+Also provided are the original SVG Zebrapig logo for users who wish to create
+their own Exherbo-themed artwork, and a set of standard desktop icons.
 
-Each image (with the exception of the artwork in the `logo/` subdirectory) has
-been specially prepared for SVGmod processing, which allows automated changing
-of background color and widening of the image without its contents being
-flattened. See `README.mkd` in the
-[SVGmod distribution](http://gitorious.org/svgmod/) for more information on
-this process, and `man svgmod` for usage details.
+Each image (with the exception of the artwork in the `icons/` and `logo/`
+subdirectories) has been specially prepared for SVGmod processing, which allows
+automated changing of background color and widening of the image without its
+contents being flattened. See `README.mkd` in the [SVGmod distribution][1] for
+more information on this process, and `man svgmod` for usage details.
 
 
 Contents
 --------
 
-* **/usr/share/exherbo-artwork/exherbo-zebrapig.svg**
+* __/usr/share/exherbo-artwork/exherbo-zebrapig.svg__
 
-  The Passively Capricious Zebrapig. Font: *Distro Bold*.
+  The Passively Capricious Zebrapig. Font: _Distro Bold_.
 
-* **/usr/share/exherbo-artwork/exherbo-zebrapig-grub_legacy.svg**
+* __/usr/share/exherbo-artwork/exherbo-zebrapig-grub\_legacy.svg__
 
   Same as above but recomposed to look nice with GRUB Legacy's fixed 640x480
-  menu layout. Font: *Distro Bold*.
+  menu layout. Font: _Distro Bold_.
 
-* **/usr/share/exherbo-artwork/exherbo-zebrapig-zoink.svg**
+* __/usr/share/exherbo-artwork/exherbo-zebrapig-zoink.svg__
 
-  Zoinking ZebraPig. "exherbo" font: *Distro Bold*. "Zoink!" font: *Complete in
-  Him*.
+  Zoinking Zebrapig. "exherbo" font: _Distro Bold_. "Zoink!" font: _Complete in
+  Him_.
 
-* **/usr/share/exherbo-artwork/logo/*.svg**
+* __/usr/share/exherbo-artwork/logo/\*.svg__
 
-  Original SVG zebrapig logo.
+  Original SVG Zebrapig logo.
 
-* **/usr/bin/make-exherbo-art**
+* __/usr/share/icons/hicolor/\*/apps/zebrapig.\*__
+
+  Zebrapig icons for the [XDG default theme _hicolor_][2]. Sizes: 16x16, 22x22,
+  32x32, 48x48, 64x64, 128x128, and scalable SVG.
+
+* __/usr/bin/make-exherbo-art__
 
   Tool to automate the customization of SVG images to multiple display
   geometries and background colors, sparing Exherbo developers from tedium and
   giving users a simple, straightforward way to tailor images to their needs
   without having to use tools such as Inkscape or GIMP.
 
-* **/etc/exherbo-artwork.cfg**
+* __/etc/exherbo-artwork.cfg__
 
   Configuration file for `make-exherbo-art`.
 
@@ -53,9 +57,9 @@ Requirements
 
 Needed by `make-exherbo-art`:
 
-* **ImageMagick**
-* **Python** - Version 2.6 or greater.
-* **SVGmod**
+* __ImageMagick__
+* __Python__ - Version 2.6 or greater.
+* __SVGmod__
 
 
 Usage
@@ -118,12 +122,13 @@ Copyright and License
 > Released under the MIT License. See the file LICENSE for redistribution
 > information.
 
-### Artwork under subdirectory "logo"
+### Artwork under the "icons" and "logo" subdirectories
 > Copyright (c) 2008 Ida Jensen
 >
 > Based on an original drawing Copyright (c) 2008 Christel Dahlskjaer
 > <christel@exherbo.org>
 >
+> Released under the [Creative Commons Attribution-ShareAlike 3.0 license][3].  
 > See the file logo/COPYING for license information.
 
 ### All other artwork
@@ -131,5 +136,10 @@ Copyright and License
 > Copyright (c) 2008 Ida Jensen  
 > Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
 >
-> Released under the [Creative Commons Attribution-ShareAlike 3.0
-> license](http://creativecommons.org/licenses/by-sa/3.0/).
+> Released under the [Creative Commons Attribution-ShareAlike 3.0 license][3].
+
+
+[1]: http://gitorious.org/svgmod/
+[2]: http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html#directory_layout
+[3]: http://creativecommons.org/licenses/by-sa/3.0/
+
