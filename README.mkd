@@ -17,39 +17,41 @@ more information on this process, and `man svgmod` for usage details.
 Contents
 --------
 
-* __/usr/share/exherbo-artwork/exherbo-zebrapig.svg__
+*   __`/usr/share/exherbo-artwork/exherbo-zebrapig.svg`__
+    
+    The Passively Capricious Zebrapig. Font: _Distro Bold_.
 
-  The Passively Capricious Zebrapig. Font: _Distro Bold_.
+*   __`/usr/share/exherbo-artwork/exherbo-zebrapig-grub_legacy.svg`__
+    
+    Same as above but recomposed to look nice with GRUB Legacy's fixed 640x480
+    menu layout. Font: _Distro Bold_.
 
-* __/usr/share/exherbo-artwork/exherbo-zebrapig-grub\_legacy.svg__
+*   __`/usr/share/exherbo-artwork/exherbo-zebrapig-zoink.svg`__
+    
+    Zoinking Zebrapig. "exherbo" font: _Distro Bold_. "Zoink!" font: _Complete
+    in Him_.
 
-  Same as above but recomposed to look nice with GRUB Legacy's fixed 640x480
-  menu layout. Font: _Distro Bold_.
+*   __`/usr/share/exherbo-artwork/logo/*.svg`__
+    
+    Original SVG Zebrapig logo.
 
-* __/usr/share/exherbo-artwork/exherbo-zebrapig-zoink.svg__
+*   __`/usr/share/icons/hicolor/*/apps/*`__
+    
+    *   Zebrapig icons for the [XDG default theme _hicolor_][2]. Sizes: 16x16,
+        22x22, 32x32, 48x48, 64x64, 128x128, and scalable SVG.
+    *   Scalable Oxygen-themed Zebrapig icon for KDE start menus, based on
+        `start-here-kde.svgz` from the Oxygen Icon Theme version 4.5.2.
 
-  Zoinking Zebrapig. "exherbo" font: _Distro Bold_. "Zoink!" font: _Complete in
-  Him_.
+*   __`/usr/bin/make-exherbo-art`__
+    
+    Tool to automate the customization of SVG images to multiple display
+    geometries and background colors, sparing Exherbo developers from tedium
+    and giving users a simple, straightforward way to tailor images to their
+    needs without having to use tools such as Inkscape or GIMP.
 
-* __/usr/share/exherbo-artwork/logo/\*.svg__
-
-  Original SVG Zebrapig logo.
-
-* __/usr/share/icons/hicolor/\*/apps/zebrapig.\*__
-
-  Zebrapig icons for the [XDG default theme _hicolor_][2]. Sizes: 16x16, 22x22,
-  32x32, 48x48, 64x64, 128x128, and scalable SVG.
-
-* __/usr/bin/make-exherbo-art__
-
-  Tool to automate the customization of SVG images to multiple display
-  geometries and background colors, sparing Exherbo developers from tedium and
-  giving users a simple, straightforward way to tailor images to their needs
-  without having to use tools such as Inkscape or GIMP.
-
-* __/etc/exherbo-artwork.cfg__
-
-  Configuration file for `make-exherbo-art`.
+*   __`/etc/exherbo-artwork.cfg`__
+    
+    Configuration file for `make-exherbo-art`.
 
 
 Requirements
@@ -57,9 +59,9 @@ Requirements
 
 Needed by `make-exherbo-art`:
 
-* __ImageMagick__
-* __Python__ - Version 2.6 or greater.
-* __SVGmod__
+*   __ImageMagick__
+*   __Python__ - Version 2.6 or greater.
+*   __SVGmod__
 
 
 Usage
@@ -68,14 +70,14 @@ Usage
 For a complete list of command line options see `make-exherbo-art --help`.
 
 Before using `make-exherbo-art` for the first time you should edit
-`/etc/exherbo-artwork.cfg` and at least set the output resolutions to suit
-your needs. Read the comments in that file for configuration details. You can
+`/etc/exherbo-artwork.cfg` and at least set the output resolutions to suit your
+needs. Read the comments in that file for configuration details. You can
 comment out sections for any images you won't use, or add new sections for
 images not included in this distribution.
 
 Once you have a customized configuration simply run:
 
-    make-exherbo-art
+    $ make-exherbo-art
 
 Processed files will be saved to the current directory by default, although
 this can be overridden in the config file either globally or per-file. The
@@ -87,7 +89,7 @@ Some common cases for deploying output images are outlined below:
 
 ### GRUB Legacy splash images
 
-    mv exherbo-zebrapig-grub_legacy-pink-640x480.xpm.gz /boot/grub/
+    # mv exherbo-zebrapig-grub_legacy-pink-640x480.xpm.gz /boot/grub/
 
 Edit the value for `splashimage` in your `grub.conf` file or `menu.lst` if
 that's what you use. (Simply add the following line to the beginning of the
@@ -102,7 +104,7 @@ Replace `(hd0,0)` with your system's GRUB root if it's different.
 
 For KDE4:
 
-    mv exherbo-zebrapig-zoink-pink-1024x768.png ~/.kde4/share/wallpapers/
+    $ mv exherbo-zebrapig-zoink-pink-1024x768.png ~/.kde4/share/wallpapers/
 
 
 Authors
@@ -117,24 +119,40 @@ Copyright and License
 ---------------------
 
 ### make-exherbo-art
-> Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
+> Copyright (C) 2009 Sterling X. Winter <sterling.winter@gmail.com>
 >
-> Released under the MIT License. See the file LICENSE for redistribution
-> information.
+> Released under the MIT License.  
+> See the file `LICENSE` for redistribution information.
 
-### Artwork under the "icons" and "logo" subdirectories
-> Copyright (c) 2008 Ida Jensen
+### Artwork under the "icons" and "logo" subdirectories, except `start-here-exherbo-oxygen.svg`
+> Copyright (C) 2008 Ida Jensen
 >
-> Based on an original drawing Copyright (c) 2008 Christel Dahlskjaer
+> Based on an original drawing Copyright (C) 2008 Christel Dahlskjaer
 > <christel@exherbo.org>
 >
 > Released under the [Creative Commons Attribution-ShareAlike 3.0 license][3].  
-> See the file logo/COPYING for license information.
+> See the file `logo/COPYING` for license information.
+
+### `start-here-exherbo-oxygen.svg`
+> Based in part upon `start-here-kde.svgz` from the Oxygen Icon Theme version
+> 4.5.2, which is:
+>
+> Copyright (C) 2007 David Vignoni <david@icon-king.com>  
+> Copyright (C) 2007 Johann Ollivier Lapeyre <johann@oxygen-icons.org>  
+> Copyright (C) 2007 Kenneth Wimer <kwwii@bootsplash.org>  
+> Copyright (C) 2007 Nuno Pinheiro <nuno@oxygen-icons.org>  
+> Copyright (C) 2007 Riccardo Iaconelli <riccardo@oxygen-icons.org>  
+> Copyright (C) 2007 David Miller <miller@oxygen-icons.org>
+>
+> and others.
+>
+> Released under the GNU Lesser General Public License, Version 3.  
+> See the file `licenses/Oxygen-Icon-Theme` for license information.
 
 ### All other artwork
-> Copyright (c) 2008 Christel Dahlskjaer <christel@exherbo.org>  
-> Copyright (c) 2008 Ida Jensen  
-> Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
+> Copyright (C) 2008 Christel Dahlskjaer <christel@exherbo.org>  
+> Copyright (C) 2008 Ida Jensen  
+> Copyright (C) 2009 Sterling X. Winter <sterling.winter@gmail.com>
 >
 > Released under the [Creative Commons Attribution-ShareAlike 3.0 license][3].
 
