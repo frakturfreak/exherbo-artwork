@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Copyright (c) 2009 Sterling X. Winter <sterling.winter@gmail.com>
+# Copyright (C) 2009 Sterling X. Winter <replica@exherbo.org>
 # See the file LICENSE for redistribution information.
 
 from commands import getstatusoutput

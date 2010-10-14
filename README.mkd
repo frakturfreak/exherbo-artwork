@@ -112,14 +112,14 @@ Authors
 
 Christel Dahlskjaer <christel@exherbo.org>  
 Ida Jensen  
-Sterling X. Winter <sterling.winter@gmail.com>
+Sterling X. Winter <replica@exherbo.org>
 
 
 Copyright and License
 ---------------------
 
 ### make-exherbo-art
-> Copyright (C) 2009 Sterling X. Winter <sterling.winter@gmail.com>
+> Copyright (C) 2009 Sterling X. Winter <replica@exherbo.org>
 >
 > Released under the MIT License.  
 > See the file `LICENSE` for redistribution information.
@@ -152,7 +152,7 @@ Copyright and License
 ### All other artwork
 > Copyright (C) 2008 Christel Dahlskjaer <christel@exherbo.org>  
 > Copyright (C) 2008 Ida Jensen  
-> Copyright (C) 2009 Sterling X. Winter <sterling.winter@gmail.com>
+> Copyright (C) 2009, 2010 Sterling X. Winter <replica@exherbo.org>
 >
 > Released under the [Creative Commons Attribution-ShareAlike 3.0 license][3].
 
